@@ -90,8 +90,9 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
+/* CV page styling */
 section h2 {
-  border-bottom: 2px solid var(--color-accent);
+  border-bottom: 2px solid oklch(60% 25% 195);
   padding-bottom: 0.2em;
   margin-top: 1.5em;
 }
@@ -119,7 +120,7 @@ section ul {
 }
 
 section li::marker {
-  color: var(--color-accent);
+  color: oklch(60% 25% 195);
 }
 
 time {
