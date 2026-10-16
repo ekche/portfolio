@@ -141,3 +141,7 @@ html {
 .color-scheme select {
   font: inherit;
 }
+
+.color-scheme {
+  z-index: 10;
+}
