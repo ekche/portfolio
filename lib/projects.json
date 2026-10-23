@@ -1,0 +1,14 @@
+[
+  {"title": "Campus Dining Data Analysis", "year": "2025", "image": "https://vis-society.github.io/labs/2/images/empty.svg", "description": "An analysis of dining hall data to find the most popular meal times, with charts built in Python."},
+  {"title": "Student Housing Cost Explorer", "year": "2025", "image": "https://vis-society.github.io/labs/2/images/empty.svg", "description": "A look at how rent prices change across neighborhoods near campus."},
+  {"title": "Weather Trends Dashboard", "year": "2025", "image": "https://vis-society.github.io/labs/2/images/empty.svg", "description": "Visualizing temperature and rainfall patterns over several years."},
+  {"title": "Study Habits Survey", "year": "2024", "image": "https://vis-society.github.io/labs/2/images/empty.svg", "description": "Survey results on how students study, with summary statistics and graphs."},
+  {"title": "Movie Ratings Comparison", "year": "2024", "image": "https://vis-society.github.io/labs/2/images/empty.svg", "description": "Comparing critic and audience ratings across hundreds of films."},
+  {"title": "Fitness Tracker Data", "year": "2024", "image": "https://vis-society.github.io/labs/2/images/empty.svg", "description": "Exploring steps, sleep, and activity data to find weekly patterns."},
+  {"title": "Public Transit Usage", "year": "2024", "image": "https://vis-society.github.io/labs/2/images/empty.svg", "description": "A map-based view of how bus ridership changes throughout the day."},
+  {"title": "Sports Statistics Visualization", "year": "2023", "image": "https://vis-society.github.io/labs/2/images/empty.svg", "description": "Charts that show how player performance changes over a season."},
+  {"title": "Coffee Shop Sales Report", "year": "2023", "image": "https://vis-society.github.io/labs/2/images/empty.svg", "description": "Tracking daily sales to find the busiest hours and best-selling drinks."},
+  {"title": "Music Listening History", "year": "2023", "image": "https://vis-society.github.io/labs/2/images/empty.svg", "description": "Analyzing listening habits by genre, time of day, and artist."},
+  {"title": "Environmental Air Quality", "year": "2022", "image": "https://vis-society.github.io/labs/2/images/empty.svg", "description": "Visualizing air quality readings and how they relate to traffic."},
+  {"title": "Personal Budget Tracker", "year": "2022", "image": "https://vis-society.github.io/labs/2/images/empty.svg", "description": "A breakdown of monthly spending by category with simple charts."}
+]
