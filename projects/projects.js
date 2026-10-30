@@ -19,9 +19,11 @@ const colors = d3.scaleOrdinal(d3.schemeTableau10)
 let query = '';
 let selectedYear = null;
 
-function toggleYear(label) {
+function toggleYear(label, focusSelector = null) {
   selectedYear = selectedYear === label ? null : label;
   applyFilters();
+  // elements are re-created on each render, so restore keyboard focus
+  if (focusSelector) document.querySelector(`${focusSelector}[data-label="${label}"]`)?.focus();
 }
 
 function renderPieChart(projectsGiven) {
@@ -50,11 +52,12 @@ function renderPieChart(projectsGiven) {
       .attr('role', 'button')
       .attr('aria-pressed', i === selectedIndex)
       .attr('aria-label', `${data[i].label}: ${data[i].value} projects`)
+      .attr('data-label', data[i].label)
       .on('click', () => toggleYear(data[i].label))
       .on('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          toggleYear(data[i].label);
+          toggleYear(data[i].label, 'path');
         }
       });
   });
@@ -67,12 +70,13 @@ function renderPieChart(projectsGiven) {
       .attr('tabindex', 0)
       .attr('role', 'button')
       .attr('aria-pressed', i === selectedIndex)
+      .attr('data-label', d.label)
       .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`)
       .on('click', () => toggleYear(d.label))
       .on('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          toggleYear(d.label);
+          toggleYear(d.label, 'li');
         }
       });
   });
