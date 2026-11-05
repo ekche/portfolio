@@ -66,9 +66,7 @@ function renderCommitInfo(data, commits) {
     ['Total <abbr title="Lines of code">LOC</abbr>', data.length],
     ['Max depth', d3.max(data, (d) => d.depth)],
     ['Longest line', d3.max(data, (d) => d.length)],
-    ['Max file length', d3.max(fileLengths, (d) => d[1])],
     ['Avg file length', Math.round(d3.mean(fileLengths, (d) => d[1]))],
-    ['Busiest time of day', maxPeriod],
   ];
   for (const [label, value] of stats) {
     dl.append('dt').html(label);
@@ -198,7 +196,7 @@ function renderScatterPlot(data, commits) {
   svg
     .append('g')
     .attr('transform', `translate(0, ${usableArea.bottom})`)
-    .call(d3.axisBottom(xScale));
+    .call(d3.axisBottom(xScale).ticks(8));
   svg
     .append('g')
     .attr('transform', `translate(${usableArea.left}, 0)`)
