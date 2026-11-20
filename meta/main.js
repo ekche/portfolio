@@ -62,7 +62,7 @@ let filteredCommits = commits;
 // ---------- shared chart geometry ----------
 const width = 1000;
 const height = 600;
-const margin = { top: 10, right: 10, bottom: 30, left: 50 };
+const margin = { top: 20, right: 30, bottom: 60, left: 90 };
 const usableArea = {
   top: margin.top,
   right: width - margin.right,
@@ -251,6 +251,20 @@ function renderScatterPlot(data, commits) {
         .tickFormat((d) => String(d % 24).padStart(2, '0') + ':00'),
     );
 
+  svg
+    .append('text')
+    .attr('class', 'axis-title')
+    .attr('x', (usableArea.left + usableArea.right) / 2)
+    .attr('y', height - 8)
+    .attr('text-anchor', 'middle')
+    .text('Date');
+  svg
+    .append('text')
+    .attr('class', 'axis-title')
+    .attr('transform', `translate(18, ${(usableArea.top + usableArea.bottom) / 2}) rotate(-90)`)
+    .attr('text-anchor', 'middle')
+    .text('Time of day');
+
   const dots = svg.append('g').attr('class', 'dots');
   drawDots(dots, commits);
 
@@ -368,7 +382,6 @@ d3.select('#scatter-story')
         (d) => d.file,
       ).length
     } files.
-    Then I looked over all I had made, and I saw that it was very good.
   `,
   );
 
@@ -386,6 +399,7 @@ scroller
   .setup({
     container: '#scrolly-1',
     step: '#scrolly-1 .step',
+    offset: 0.75,
   })
   .onStepEnter(onStepEnter);
 
