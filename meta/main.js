@@ -271,11 +271,21 @@ function renderScatterPlot(data, commits) {
   createBrushSelector(svg);
 }
 
+// A single commit gives a zero-width date range, so pad it by 12 hours each side
+function timeDomain(commits) {
+  let [t0, t1] = d3.extent(commits, (d) => d.datetime);
+  if (+t0 === +t1) {
+    t0 = d3.timeHour.offset(t0, -12);
+    t1 = d3.timeHour.offset(t1, 12);
+  }
+  return [t0, t1];
+}
+
 // Step 1.2: update the existing plot instead of creating a new svg
 function updateScatterPlot(data, commits) {
   const svg = d3.select('#chart').select('svg');
 
-  xScale = xScale.domain(d3.extent(commits, (d) => d.datetime)).nice();
+  xScale = xScale.domain(timeDomain(commits)).nice();
 
   const xAxisGroup = svg.select('g.x-axis');
   xAxisGroup.selectAll('*').remove();
